@@ -1,21 +1,23 @@
 package org.example;
 
 public class Plate {
+    private int food;
 
-    public int food;
-    public Plate(int food) {
-        this.food = food;
+    Plate(int foodAmount) {
+        this.food = foodAmount;
     }
 
-    public void removeFood(int n) {
-        food -= n;
+    void removeFood(int appetite) {
+        if (food >= appetite) {
+            food -= appetite;
+        }
     }
 
-    public void addFood(int x) {
-        food += x;
+    int getFood() {
+        return food;
     }
 
-    public void foodAmount() {
-        System.out.println("Всего еды: " + food);
+    void addFood(int amount) {
+        food += amount;
     }
 }
